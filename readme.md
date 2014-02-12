@@ -16,11 +16,8 @@ Consider the following example.
 **Note**: The User resource is actually the same across all states.
 The difference being the available transitions from each state.
 
----
-
-*HAN makes no assumptions about API consumers & does not presume to dictate UI concerns.*
-
----
+Because HAN is concerned with resources, their states & transitions,
+it makes no assumptions related to API consumers & does not presume to dictate UI concerns.
 
 ## Data Structures
 
@@ -42,13 +39,13 @@ The difference being the available transitions from each state.
 
 ```javascript
 {
-  name: "",    // the name of the action
   type: "",    // the type of action [hard, soft]
+  name: "",    // the name of the action
   href: "",    // the url for the action
   verbs: [],   // the http verbs supported by the action [GET, POST, ...]
   headers: [], // the http headers required by the action
-  params: {},  // the params supported by the action
   formats: [], // the formats supported by the action [json, xml, ...]
+  params: {},  // the params supported by the action
 }
 ```
 
@@ -63,12 +60,58 @@ The difference being the available transitions from each state.
 }
 ```
 
-## Complete Example
+## Examples
 
-![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
+This example illustrates the create user response described above.
 
 ```javascript
 {
-  // coming soon...
+  han: true,
+  version: "v1",
+  name: "User",
+  value: {
+    id: 1,
+    name: "Jon Doe"
+  },
+  action: {
+    type: "hard",
+    name: "Create User",
+    href: "http://api.example.com/users",
+    verbs: [ "POST" ],
+    headers: {
+      "Accept": "application/vnd.example.v1+json"
+    },
+    formats: [ "json" ],
+    params: {
+      name: "Jon Doe"
+    }
+  },
+  transitions: [
+    {
+      type: "soft", // note: this is a soft transition (params demonstrate possiblities)
+      name: "Update User",
+      href: "http://api.example.com/users/1",
+      verbs: [ "PUT" ],
+      headers: {
+        "Accept": "application/vnd.example.v1+json"
+      },
+      formats: [ "json" ],
+      params: {
+        name: "New Name" // params should be modified before making the transition
+      }
+    },
+    {
+      type: "hard", // note: this is a hard transition (must be called exactly as outlined)
+      name: "Delete User",
+      href: "http://api.example.com/users/1",
+      verbs: [ "DELETE" ],
+      headers: {
+        "Accept": "application/vnd.example.v1+json"
+      },
+      formats: [ "json" ],
+      params: {}
+    }
+  ],
+  errors: [],
 }
 ```
