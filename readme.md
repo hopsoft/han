@@ -39,7 +39,7 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 
 ##### Resource Values
 
-Resource values may be a list (array) or an object (associative array).
+Resource values may contain a list (array) or an object (associative array).
 Values contain metadata that describe their contents.
 
 ###### List
