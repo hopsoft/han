@@ -38,9 +38,9 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 ```
 
 ##### Resource Value
-A resource's value may be a List (as one-dimensional array) OR an Object (as in HashMap, Hash Table, Hash, Associative Array, etc.), but not both. Both value types contain metadata about their type. In the case that you provide a List you must provide a count of how many items are in the List. For an Object there is no count..
+A resource's value may be a List (as one-dimensional array) OR an Object (as in HashMap, Hash Table, Hash, Associative Array, etc.), but not both. Both value types contain metadata about their type. In the case that you provide a List you must provide a count of how many items are in the List. For an Object there is no count.
 
-##### List
+###### List
 
 ```javascript
 { ...
@@ -49,7 +49,7 @@ A resource's value may be a List (as one-dimensional array) OR an Object (as in 
     count: 0,   // count of number of items in list
     items : []  // list of items
   }
-
+  ...
 }
 ```
 ###### Object
@@ -60,7 +60,7 @@ A resource's value may be a List (as one-dimensional array) OR an Object (as in 
     type: Object, // the type of items
     item: {}      // list of items
   }
-
+  ...
 }
 ```
 
@@ -100,7 +100,7 @@ This example illustrates the create user response described above. It contains a
   han: true,
   version: "v1"
   name: "User",
-  value: { // the value is your customized object
+  value: { // the value is your customized object with metadata
     type: "Object",
     item: {"id" : 1, "name" : "Jon Doe"}
   },
@@ -156,9 +156,9 @@ This example illustrates the create user response described above. It contains a
   han: true,
   version: "v1"
   name: "User",
-  value: { // the value is your customized object
+  value: { // the value is your customized objec with metadatat
     type: "List",
-    count: 3,
+    count: 1,
     items: [{"id" : 333, "name" : "Han Solo"}]
   },
   action: { // the action that was invoked to receive this response
