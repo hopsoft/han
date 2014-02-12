@@ -25,15 +25,15 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 
 #### Resource
 
-```json
+```javascript
 {
-  "han": true,       // indicates that this is a HAN resource
-  "version": "",     // the resource version
-  "name": "",        // the name of the resource
-  "value": {} || [], // the resource value
-  "action": {},      // [the action performed to obtain the resource]
-  "transitions": [], // the navigational actions that can be performed with the resource
-  "errors": []       // the errors encounted while obtaining the resource
+  han: true,       // indicates that this is a HAN resource
+  version: "",     // the resource version
+  name: "",        // the name of the resource
+  value: {},       // the resource value
+  action: {},      // [the action performed to obtain the resource]
+  transitions: [], // the navigational actions that can be performed with the resource
+  errors: []       // the errors encounted while obtaining the resource
 }
 ```
 
@@ -44,49 +44,49 @@ Values contain metadata that describe their contents.
 
 ###### List
 
-```json
+```javascript
 {
-  "value": {
-    "type": "list", // the type of value [list, object]
-    "count": 0,     // the number of items in the list (required for list types)
-    "items": []     // this list of items
+  value: {
+    type: "list", // the type of value [list, object]
+    count: 0,     // the number of items in the list (required for list types)
+    items: []     // this list of items
   }
 }
 ```
 
 ###### Object
 
-```json
+```javascript
 {
-  "value": {
-    "type": "object", // the type of value [list, object]
-    "item": {}        // the item
+  value: {
+    type: "object", // the type of value [list, object]
+    item: {}        // the item
   }
 }
 ```
 
 #### Action
 
-```json
+```javascript
 {
-  "type": "",    // the type of action [hard, soft]
-  "name": "",    // the name of the action
-  "href": "",    // the url for the action
-  "verbs": [],   // the http verbs supported by the action [GET, POST, ...]
-  "headers": [], // the http headers required by the action
-  "formats": [], // the formats supported by the action [json, xml, ...]
-  "params": {},  // the params supported by the action
+  type: "",    // the type of action [hard, soft]
+  name: "",    // the name of the action
+  href: "",    // the url for the action
+  verbs: [],   // the http verbs supported by the action [GET, POST, ...]
+  headers: [], // the http headers required by the action
+  formats: [], // the formats supported by the action [json, xml, ...]
+  params: {},  // the params supported by the action
 }
 ```
 
 #### Error
 
-```json
+```javascript
 {
-  "name": "",       // the name of the error
-  "message": "",    // the error message
-  "backtrace": [],  // [the error's backtrace]
-  "inner_error": {} // [the inner error]
+  name: "",       // the name of the error
+  message: "",    // the error message
+  backtrace: [],  // [the error's backtrace]
+  inner_error: {} // [the inner error]
 }
 ```
 
@@ -114,7 +114,7 @@ This example illustrates the create user response described above. It contains a
     href: "http://api.example.com/users",
     verbs: [ "POST" ],
     headers: {
-      "Accept": "application/vnd.example.v1+json"
+      Accept: "application/vnd.example.v1+json"
     },
     formats: [ "json" ],
     params: {
@@ -128,7 +128,7 @@ This example illustrates the create user response described above. It contains a
       href: "http://api.example.com/users/1",
       verbs: [ "PUT" ],
       headers: {
-        "Accept": "application/vnd.example.v1+json"
+        Accept: "application/vnd.example.v1+json"
       },
       formats: [ "json" ],
       params: {
@@ -141,7 +141,7 @@ This example illustrates the create user response described above. It contains a
       href: "http://api.example.com/users/1",
       verbs: [ "DELETE" ],
       headers: {
-        "Accept": "application/vnd.example.v1+json"
+        Accept: "application/vnd.example.v1+json"
       },
       formats: [ "json" ],
       params: {}
@@ -164,9 +164,9 @@ This example illustrates a user search.
     type: "list",
     count: 3,
     items: [ // the items are your custom objects
-      { "id": 1, "name": "Han Solo" },
-      { "id": 2, "name": "Luke Skywalker" },
-      { "id": 3, "name": "Princess Leia" }
+      { id: 1, name: "Han Solo" },
+      { id: 2, name: "Luke Skywalker" },
+      { id: 3, name: "Princess Leia" }
     ]
   },
   action: { // the action that was invoked to receive this response
@@ -175,7 +175,7 @@ This example illustrates a user search.
     href: "http://api.example.com/users",
     verbs: [ "POST" ],
     headers: {
-      "Accept": "application/vnd.example.v1+json"
+      Accept: "application/vnd.example.v1+json"
     },
     formats: [ "json" ],
     params: {
