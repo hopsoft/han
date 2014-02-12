@@ -1,5 +1,7 @@
 # HAN - Hypermedia API Navigation
 
+![HAN Solo](https://raw2.github.com/hopsoft/han/master/han.gif)
+
 ### A specification for communicating hypermedia API navigation concerns
 
 HAN considers APIs to be state machines.
