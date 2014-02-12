@@ -27,13 +27,40 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 
 ```javascript
 {
-  han: true,       // indicates that this a HAN resource
+  han: true,       // indicates that this is a HAN resource
   version: "",     // the resource version
   name: "",        // the name of the resource
   value: {} || [], // the resource value
   action: {},      // [the action performed to obtain the resource]
   transitions: [], // the navigational actions that can be performed with the resource
   errors: []       // the errors encounted while obtaining the resource
+}
+```
+
+##### Resource Value
+A resource's value may be a List (as one-dimensional array) OR an Object (as in HashMap, Hash Table, Hash, Associative Array, etc.), but not both. Both value types contain metadata about their type. In the case that you provide a List you must provide a count of how many items are in the List. For an Object there is no count..
+
+##### List
+
+```javascript
+{ ...
+  value : {
+    type: List, // the type of items
+    count: 0,   // count of number of items in list
+    items : []  // list of items
+  }
+
+}
+```
+###### Object
+
+```javascript
+{ ...
+  value : {
+    type: Object, // the type of items
+    item: {}      // list of items
+  }
+
 }
 ```
 
@@ -64,18 +91,18 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 
 ## Examples
 
-#### Basic
+#### Basic with Object
 
-This example illustrates the create user response described above.
+This example illustrates the create user response described above. It contains a value of Object type.
 
 ```javascript
 {
   han: true,
-  version: "v1",
+  version: "v1"
   name: "User",
   value: { // the value is your customized object
-    id: 1,
-    name: "Jon Doe"
+    type: "Object",
+    item: {"id" : 1, "name" : "Jon Doe"}
   },
   action: { // the action that was invoked to receive this response
     type: "hard",
@@ -108,6 +135,63 @@ This example illustrates the create user response described above.
       type: "hard", // note: this is a hard transition (must be called exactly as presented)
       name: "Delete User",
       href: "http://api.example.com/users/1",
+      verbs: [ "DELETE" ],
+      headers: {
+        "Accept": "application/vnd.example.v1+json"
+      },
+      formats: [ "json" ],
+      params: {}
+    }
+  ],
+  errors: [],
+}
+```
+
+#### Basic with List
+
+This example illustrates the create user response described above. It contains a value of List type.
+
+```javascript
+{
+  han: true,
+  version: "v1"
+  name: "User",
+  value: { // the value is your customized object
+    type: "List",
+    count: 3,
+    items: [{"id" : 333, "name" : "Han Solo"}]
+  },
+  action: { // the action that was invoked to receive this response
+    type: "hard",
+    name: "Create User",
+    href: "http://api.example.com/users",
+    verbs: [ "POST" ],
+    headers: {
+      "Accept": "application/vnd.example.v1+json"
+    },
+    formats: [ "json" ],
+    params: {
+      name: "Han Solo"
+    }
+  },
+  transitions: [ // note: transition values are actions
+    {
+      type: "soft", // note: this is a soft transition (params demonstrate possiblities)
+      name: "Update User",
+      href: "http://api.example.com/users/333",
+      verbs: [ "PUT" ],
+      headers: {
+        "Accept": "application/vnd.example.v1+json"
+      },
+      formats: [ "json" ],
+      params: {
+        name: "New Name" // params should be modified before making the transition
+      }
+    },
+    {
+      type: "hard", // note: this is a hard transition (must be called exactly as presented)
+      name: "Delete User",
+      href: "http://api.example.com/users/333",
       verbs: [ "DELETE" ],
       headers: {
         "Accept": "application/vnd.example.v1+json"
