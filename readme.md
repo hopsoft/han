@@ -18,7 +18,7 @@ Consider the following example.
 **Note**: The User resource is actually the same across all states.
 The difference being the available transitions from each state.
 
-Because HAN is concerned with resources, their states & transitions,
+Because HAN is concerned with resources (their states & transitions),
 it makes no assumptions related to API consumers & does not presume to dictate UI concerns.
 
 ## Data Structures
