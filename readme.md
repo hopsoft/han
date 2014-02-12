@@ -7,6 +7,7 @@
 HAN treats your API as a state machine.
 Think of each rendered resource as a state that can transition to another state.
 Consider the following example.
+*While somewhat contrived, it illustrates the concept well.*
 
 ![User Resources & Transitions](https://raw2.github.com/hopsoft/han/master/user-example.png)
 
@@ -14,7 +15,14 @@ Consider the following example.
 * The **updated-user** supports the `delete` transition.
 * The **deleted-user** doesn't support any transitions.
 
-*__Note:__ HAN makes no assumptions about API consumers & does not presume to dictate UI concerns.*
+**Note**: The User resource is actually the same across all states.
+The difference being the available transitions from each state.
+
+---
+
+*HAN makes no assumptions about API consumers & does not presume to dictate UI concerns.*
+
+---
 
 ## Data Structures
 
