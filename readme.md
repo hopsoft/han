@@ -23,7 +23,7 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 
 ## Data Structures
 
-#### Resource
+### Resource
 
 A resource is a container that wraps a custom value & includes hypermedia meta data.
 
@@ -39,12 +39,12 @@ A resource is a container that wraps a custom value & includes hypermedia meta d
 }
 ```
 
-##### Resource Values
+#### Resource Values
 
 Resource values may contain an object (associative array) or a list (array).
 Values contain metadata that describe their contents.
 
-###### Object Value
+##### Object Value
 
 ```javascript
 {
@@ -55,7 +55,7 @@ Values contain metadata that describe their contents.
 }
 ```
 
-###### List Value
+##### List Value
 
 ```javascript
 {
@@ -67,7 +67,7 @@ Values contain metadata that describe their contents.
 }
 ```
 
-#### Action
+### Action
 
 An action describes all necessary info required to make a transition for a given resource.
 
@@ -83,7 +83,7 @@ An action describes all necessary info required to make a transition for a given
 }
 ```
 
-#### Error
+### Error
 
 ```javascript
 {
@@ -96,7 +96,7 @@ An action describes all necessary info required to make a transition for a given
 
 ## Examples
 
-#### Basic ([object value](#object-value))
+### Basic ([object value](#object-value))
 
 This example illustrates the "create user" response described above.
 
@@ -155,7 +155,7 @@ This example illustrates the "create user" response described above.
 }
 ```
 
-#### Basic ([list value](#list-value))
+### Basic ([list value](#list-value))
 
 This example illustrates a "find users" call.
 
@@ -191,7 +191,7 @@ This example illustrates a "find users" call.
 }
 ```
 
-#### Embedded HAN Resources
+### Embedded HAN Resources
 
 HAN resource values may contain embedded HAN resources.
 
