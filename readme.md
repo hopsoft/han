@@ -1,6 +1,8 @@
 # HAN - Hypermedia API Navigation
 
-### HAN is a specification designed to communicate navigation concerns for hypermedia APIs.
+### HAN is a specification designed to communicate navigation concerns for hypermedia APIs
+
+This spec defines the data structures needed to represent a HAN compliant API response.
 
 HAN treats your API as a state machine.
 Think of each rendered resource as a state that can transition to another state.
@@ -8,11 +10,9 @@ Consider the following.
 
 ![User Resources & Transitions](https://raw2.github.com/hopsoft/han/master/user-example.png)
 
-* The *created-user* supports the `update` & `delete` transitions.
-* The *updated-user* supports the `delete` transition.
-* The *deleted-user* doesn't support any transitions.
-
-This spec defines the data structures needed to represent a HAN compliant API response.
+* The **created-user** supports the `update` & `delete` transitions.
+* The **updated-user** supports the `delete` transition.
+* The **deleted-user** doesn't support any transitions.
 
 *HAN makes no assumptions about API consumers & does not presume to dictate UI concerns.*
 
