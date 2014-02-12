@@ -73,7 +73,7 @@ This example illustrates the create user response described above.
     id: 1,
     name: "Jon Doe"
   },
-  action: {
+  action: { // the action that was invoked to receive this response
     type: "hard",
     name: "Create User",
     href: "http://api.example.com/users",
@@ -86,7 +86,7 @@ This example illustrates the create user response described above.
       name: "Jon Doe"
     }
   },
-  transitions: [
+  transitions: [ // note: transition values are actions
     {
       type: "soft", // note: this is a soft transition (params demonstrate possiblities)
       name: "Update User",
@@ -101,7 +101,7 @@ This example illustrates the create user response described above.
       }
     },
     {
-      type: "hard", // note: this is a hard transition (must be called exactly as outlined)
+      type: "hard", // note: this is a hard transition (must be called exactly as presented)
       name: "Delete User",
       href: "http://api.example.com/users/1",
       verbs: [ "DELETE" ],
