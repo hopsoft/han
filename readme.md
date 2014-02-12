@@ -98,7 +98,7 @@ This example illustrates the create user response described above. It contains a
 ```javascript
 {
   han: true,
-  version: "v1"
+  version: "v1",
   name: "User",
   value: { // the value is your customized object with metadata
     type: "Object",
@@ -154,7 +154,7 @@ This example illustrates the create user response described above. It contains a
 ```javascript
 {
   han: true,
-  version: "v1"
+  version: "v1",
   name: "User",
   value: { // the value is your customized objec with metadatat
     type: "List",
