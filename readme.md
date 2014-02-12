@@ -2,7 +2,7 @@
 
 ### A specification for communicating hypermedia API navigation concerns
 
-HAN treats your API as a state machine.
+HAN considers APIs to be state machines.
 Think of each rendered resource as a state that can transition to another state.
 Consider the following example.
 *While somewhat contrived, it illustrates the concept well.*
@@ -69,5 +69,6 @@ The difference being the available transitions from each state.
 
 ```javascript
 {
+  // coming soon...
 }
 ```
