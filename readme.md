@@ -2,8 +2,6 @@
 
 ### A specification for communicating hypermedia API navigation concerns
 
-![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
-
 HAN treats your API as a state machine.
 Think of each rendered resource as a state that can transition to another state.
 Consider the following example.
@@ -11,9 +9,9 @@ Consider the following example.
 
 ![User Resources & Transitions](https://raw2.github.com/hopsoft/han/master/user-example.png)
 
-* The **created-user** supports the `update` & `delete` transitions.
-* The **updated-user** supports the `delete` transition.
-* The **deleted-user** doesn't support any transitions.
+* The created state supports the `update` & `delete` transitions.
+* The updated state supports the `delete` transition.
+* The deleted state doesn't support any transitions.
 
 **Note**: The User resource is actually the same across all states.
 The difference being the available transitions from each state.
@@ -62,5 +60,14 @@ The difference being the available transitions from each state.
   message: "",    // the error message
   backtrace: [],  // [the error's backtrace]
   inner_error: {} // [the inner error]
+}
+```
+
+## Complete Example
+
+![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
+
+```javascript
+{
 }
 ```

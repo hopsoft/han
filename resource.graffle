@@ -53,7 +53,7 @@
 	<array>
 		<dict>
 			<key>Bounds</key>
-			<string>{{163.26758853418215, 370.11646175384521}, {239, 22}}</string>
+			<string>{{167.76758853418215, 370.11646175384521}, {230, 22}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -99,7 +99,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs36 \cf0 User Resources &amp; Transitions}</string>
+\f0\fs36 \cf0 User Resource &amp; Transitions}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -446,8 +446,9 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs24 \cf0 deleted\
-user}</string>
+\f0\b\fs24 \cf0 user
+\b0 \
+deleted}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -484,8 +485,9 @@ user}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs24 \cf0 updated\
-user}</string>
+\f0\b\fs24 \cf0 user
+\b0 \
+updated}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -522,8 +524,9 @@ user}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs24 \cf0 created\
-user}</string>
+\f0\b\fs24 \cf0 user
+\b0 \
+created}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -1135,7 +1138,7 @@ user}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{227.50001040918215, 28.851534145497396}, {121, 22}}</string>
+			<string>{{227.50001040918215, 37.851534145497396}, {121, 22}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -1538,7 +1541,7 @@ user}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-02-12 15:03:38 +0000</string>
+	<string>2014-02-12 15:16:40 +0000</string>
 	<key>Modifier</key>
 	<string>Nathan Hopkins</string>
 	<key>NotesVisible</key>
