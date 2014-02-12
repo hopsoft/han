@@ -1,8 +1,8 @@
+![HAN Solo](https://raw2.github.com/hopsoft/han/master/han.gif)
+
 # HAN - Hypermedia API Navigation
 
 ### A specification for communicating hypermedia API navigation concerns
-
-![HAN Solo](https://raw2.github.com/hopsoft/han/master/han.gif)
 
 HAN considers APIs to be state machines.
 Think of each rendered resource as a state that can transition to another state.
