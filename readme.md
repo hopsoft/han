@@ -2,10 +2,6 @@
 
 ### A specification for communicating hypermedia API navigation concerns
 
-This spec defines the data structures needed to represent a HAN compliant API response.
-
----
-
 HAN treats your API as a state machine.
 Think of each rendered resource as a state that can transition to another state.
 Consider the following example.
@@ -16,9 +12,7 @@ Consider the following example.
 * The **updated-user** supports the `delete` transition.
 * The **deleted-user** doesn't support any transitions.
 
----
-
-*HAN makes no assumptions about API consumers & does not presume to dictate UI concerns.*
+*__Note:__ HAN makes no assumptions about API consumers & does not presume to dictate UI concerns.*
 
 ## Data Structures
 
