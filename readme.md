@@ -108,8 +108,8 @@ This example illustrates the "create user" response described above.
   value: {
     type: "object",
     item: { // the item is your custom object
-      "id" : 1,
-      "name" : "Han Solo"
+      id: 1,
+      name: "Han Solo"
     }
   },
   action: { // the action that was invoked to receive this response
