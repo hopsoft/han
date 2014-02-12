@@ -92,9 +92,9 @@ Values contain metadata that describe their contents.
 
 ## Examples
 
-#### Basic with object value
+#### Basic (object value)
 
-This example illustrates the create user response described above. It contains a value of Object type.
+This example illustrates the "create user" response described above.
 
 ```javascript
 {
@@ -151,9 +151,9 @@ This example illustrates the create user response described above. It contains a
 }
 ```
 
-#### Basic with list value
+#### Basic (list value)
 
-This example illustrates a user search.
+This example illustrates a "find users" call.
 
 ```javascript
 {
