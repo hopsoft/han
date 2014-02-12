@@ -120,7 +120,7 @@ This example illustrates the create user response described above.
 
 #### Embedded HAN Resources
 
-Values may contain embedded HAN Resources.
+HAN resource values may contain embedded HAN resources.
 
 ![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
 
