@@ -39,8 +39,8 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 
 ##### Resource Values
 
-Resource `values` may be either a list (array) or an object (associative array).
-Values contain metadata about their type.
+Resource values may be a list (array) or an object (associative array).
+Values contain metadata that describe their contents.
 
 ###### List
 
@@ -162,7 +162,7 @@ This example illustrates a user search.
   name: "User",
   value: {
     type: "list",
-    count: 1,
+    count: 3,
     items: [ // the items are your custom objects
       { "id": 1, "name": "Han Solo" },
       { "id": 2, "name": "Luke Skywalker" },
@@ -179,7 +179,7 @@ This example illustrates a user search.
     },
     formats: [ "json" ],
     params: {
-      name: "Han Solo"
+      team: "Rebel Alliance"
     }
   },
   transitions: [] // note: no transitions are available for the search result itself
