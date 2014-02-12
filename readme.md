@@ -109,7 +109,8 @@ This example illustrates the "create user" response described above.
     type: "object",
     item: { // the item is your custom object
       id: 1,
-      name: "Han Solo"
+      name: "Han Solo",
+      team: "Rebel Alliance"
     }
   },
   action: { // the action that was invoked to receive this response
@@ -122,7 +123,8 @@ This example illustrates the "create user" response described above.
     },
     formats: [ "json" ],
     params: {
-      name: "Han Solo"
+      name: "Han Solo",
+      team: "Rebel Alliance"
     }
   },
   transitions: [ // note: transition values are actions
@@ -135,8 +137,9 @@ This example illustrates the "create user" response described above.
         Accept: "application/vnd.example.v1+json"
       },
       formats: [ "json" ],
-      params: {
-        name: "New Name" // params should be modified before making the transition
+      params: { // params should be modified before making the transition
+        name: "New Name",
+        team: "New Team"
       }
     },
     {
@@ -168,9 +171,21 @@ This example illustrates a "find users" call.
     type: "list",
     count: 3,
     items: [ // the items are your custom objects
-      { id: 1, name: "Han Solo" },
-      { id: 2, name: "Luke Skywalker" },
-      { id: 3, name: "Princess Leia" }
+      {
+        id: 1,
+        name: "Han Solo",
+        team: "Rebel Alliance"
+      },
+      {
+        id: 2,
+        name: "Luke Skywalker",
+        team: "Rebel Alliance"
+      },
+      {
+        id: 3,
+        name: "Princess Leia",
+        team: "Rebel Alliance"
+      }
     ]
   },
   action: { // the action that was invoked to receive this response
