@@ -39,10 +39,21 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 
 ##### Resource Values
 
-Resource values may contain a list (array) or an object (associative array).
+Resource values may contain an object (associative array) or a list (array).
 Values contain metadata that describe their contents.
 
-###### List
+###### Object Value
+
+```javascript
+{
+  value: {
+    type: "object", // the type of value [list, object]
+    item: {}        // the item
+  }
+}
+```
+
+###### List Value
 
 ```javascript
 {
@@ -50,17 +61,6 @@ Values contain metadata that describe their contents.
     type: "list", // the type of value [list, object]
     count: 0,     // the number of items in the list (required for list types)
     items: []     // this list of items
-  }
-}
-```
-
-###### Object
-
-```javascript
-{
-  value: {
-    type: "object", // the type of value [list, object]
-    item: {}        // the item
   }
 }
 ```
@@ -92,7 +92,7 @@ Values contain metadata that describe their contents.
 
 ## Examples
 
-#### Basic (object value)
+#### Basic ([object value](#object-value))
 
 This example illustrates the "create user" response described above.
 
@@ -151,7 +151,7 @@ This example illustrates the "create user" response described above.
 }
 ```
 
-#### Basic (list value)
+#### Basic ([list value](#list-value))
 
 This example illustrates a "find users" call.
 
