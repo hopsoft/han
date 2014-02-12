@@ -25,6 +25,8 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 
 #### Resource
 
+A resource is a container that wraps a custom value & includes hypermedia meta data.
+
 ```javascript
 {
   han: true,       // indicates that this is a HAN resource
@@ -66,6 +68,8 @@ Values contain metadata that describe their contents.
 ```
 
 #### Action
+
+An action describes all necessary info required to make a transition for a given resource.
 
 ```javascript
 {
