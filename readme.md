@@ -2,6 +2,8 @@
 
 ### A specification for communicating hypermedia API navigation concerns
 
+![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
+
 HAN treats your API as a state machine.
 Think of each rendered resource as a state that can transition to another state.
 Consider the following example.
@@ -20,6 +22,7 @@ Consider the following example.
 
 ```javascript
 {
+  han: true,       // indicates that this a HAN resource
   version: "",     // the resource version
   name: "",        // the name of the resource
   value: {} || [], // the resource value
