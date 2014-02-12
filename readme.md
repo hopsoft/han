@@ -1,10 +1,6 @@
 # HAN - Hypermedia API Navigation
 
----
-
-HAN is a specification designed to communicate navigation concerns for hypermedia APIs.
-
----
+### HAN is a specification designed to communicate navigation concerns for hypermedia APIs.
 
 HAN treats your API as a state machine.
 Think of each rendered resource as a state that can transition to another state.
