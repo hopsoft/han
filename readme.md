@@ -11,12 +11,12 @@ The spec defines data structures to represent navigational options for a resourc
 
   ```javascript
   {
-    version: "string",    // the resource version
-    name: "string",       // the name of the resource
-    value: "object",      // the resource value
-    action: "object",     // the action performed to obtain the resource
-    transitions: "array", // the navigational actions that can be performed with the resource
-    errors: "array"       // the errors encounted while obtaining the resource
+    version: "",     // the resource version
+    name: "",        // the name of the resource
+    value: {} || [], // the resource value
+    action: {},      // the action performed to obtain the resource
+    transitions: [], // the navigational actions that can be performed with the resource
+    errors: []       // the errors encounted while obtaining the resource
   }
   ```
 
@@ -24,13 +24,13 @@ The spec defines data structures to represent navigational options for a resourc
 
   ```javascript
   {
-    name: "string",   // the name of the action
-    type: "string",   // the type of action [hard, soft]
-    href: "string",   // the url for the action
-    verbs: "array",   // the http verbs supported by the action
-    headers: "array", // the http headers required by the action
-    params: "object", // the params supported by the action
-    formats: "array", // the formats supported by the action [json, xml, ...]
+    name: "",    // the name of the action
+    type: "",    // the type of action [hard, soft]
+    href: "",    // the url for the action
+    verbs: [],   // the http verbs supported by the action
+    headers: [], // the http headers required by the action
+    params: {},  // the params supported by the action
+    formats: [], // the formats supported by the action [json, xml, ...]
   }
   ```
 
