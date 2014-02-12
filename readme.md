@@ -62,6 +62,8 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 
 ## Examples
 
+#### Basic
+
 This example illustrates the create user response described above.
 
 ```javascript
@@ -69,7 +71,7 @@ This example illustrates the create user response described above.
   han: true,
   version: "v1",
   name: "User",
-  value: {
+  value: { // the value is your customized object
     id: 1,
     name: "Jon Doe"
   },
@@ -113,5 +115,17 @@ This example illustrates the create user response described above.
     }
   ],
   errors: [],
+}
+```
+
+#### Embedded HAN Resources
+
+Values may contain embedded HAN Resources.
+
+![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
+
+```javascript
+{
+  // ...
 }
 ```
