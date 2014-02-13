@@ -154,7 +154,7 @@ This example illustrates the "create user" response described above.
       params: {}
     }
   ],
-  errors: [],
+  errors: []
 }
 ```
 
@@ -192,7 +192,7 @@ This example illustrates a "find users" call.
     type: "hard",
     name: "Find Users",
     href: "http://api.example.com/users",
-    verbs: [ "POST" ],
+    verbs: [ "GET" ],
     headers: {
       Accept: "application/vnd.example.v1+json"
     },
@@ -201,19 +201,173 @@ This example illustrates a "find users" call.
       team: "Rebel Alliance"
     }
   },
-  transitions: [] // note: no transitions are available for the search result itself
-  errors: [],
+  transitions: [], // note: no transitions are available for the search result itself
+  errors: []
 }
 ```
 
 ### Embedded HAN Resources
 
 HAN resource values may contain embedded HAN resources.
+This technique looks something like this.
 
 ![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
 
+**Note**: The [action](#resource) attriubte should be omitted from embedded HAN resources as it's not relevant.
+
+Consider the "find users" example above.
+Lets update the `value` `items` to be HAN resources.
+
+**Note**: Each item now contains the hypermedia info required to navigate all possible transitions.
+
 ```javascript
 {
-  // example soon...
+  han: true,
+  version: "v1",
+  name: "User",
+  value: {
+    type: "list",
+    count: 1,
+    items: [
+      {
+        han: true,
+        version: "v1",
+        name: "User",
+        value: {
+          type: "object",
+          item: {
+            id: 1,
+            name: "Han Solo",
+            team: "Rebel Alliance"
+          }
+        },
+        transitions: [
+          {
+            type: "soft",
+            name: "Update User",
+            href: "http://api.example.com/users/1",
+            verbs: [ "PUT" ],
+            headers: {
+              Accept: "application/vnd.example.v1+json"
+            },
+            formats: [ "json" ],
+            params: {
+              name: "New Name",
+              team: "New Team"
+            }
+          },
+          {
+            type: "hard",
+            name: "Delete User",
+            href: "http://api.example.com/users/1",
+            verbs: [ "DELETE" ],
+            headers: {
+              Accept: "application/vnd.example.v1+json"
+            },
+            formats: [ "json" ],
+            params: {}
+          }
+        ],
+        errors: []
+      },
+      {
+        han: true,
+        version: "v1",
+        name: "User",
+        value: {
+          type: "object",
+          item: {
+            id: 2,
+            name: "Luke Skywalker",
+            team: "Rebel Alliance"
+          }
+        },
+        transitions: [
+          {
+            type: "soft",
+            name: "Update User",
+            href: "http://api.example.com/users/2",
+            verbs: [ "PUT" ],
+            headers: {
+              Accept: "application/vnd.example.v1+json"
+            },
+            formats: [ "json" ],
+            params: {
+              name: "New Name",
+              team: "New Team"
+            }
+          },
+          {
+            type: "hard",
+            name: "Delete User",
+            href: "http://api.example.com/users/2",
+            verbs: [ "DELETE" ],
+            headers: {
+              Accept: "application/vnd.example.v1+json"
+            },
+            formats: [ "json" ],
+            params: {}
+          }
+        ],
+        errors: []
+      },
+      {
+        han: true,
+        version: "v1",
+        name: "User",
+        value: {
+          type: "object",
+          item: {
+            id: 3,
+            name: "Princess Leia",
+            team: "Rebel Alliance"
+          }
+        },
+        transitions: [
+          {
+            type: "soft",
+            name: "Update User",
+            href: "http://api.example.com/users/3",
+            verbs: [ "PUT" ],
+            headers: {
+              Accept: "application/vnd.example.v1+json"
+            },
+            formats: [ "json" ],
+            params: {
+              name: "New Name",
+              team: "New Team"
+            }
+          },
+          {
+            type: "hard",
+            name: "Delete User",
+            href: "http://api.example.com/users/3",
+            verbs: [ "DELETE" ],
+            headers: {
+              Accept: "application/vnd.example.v1+json"
+            },
+            formats: [ "json" ],
+            params: {}
+          }
+        ],
+        errors: []
+      }
+    ]
+  },
+  action: {
+    type: "hard",
+    name: "Find Users",
+    href: "http://api.example.com/users",
+    verbs: [ "GET" ],
+    headers: {
+      Accept: "application/vnd.example.v1+json"
+    },
+    formats: [ "json" ],
+    params: {
+      team: "Rebel Alliance"
+    }
+  },
+  transitions: [],
+  errors: []
 }
 ```
