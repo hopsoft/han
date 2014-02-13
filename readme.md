@@ -2,7 +2,8 @@
 
 ![HAN Solo](https://raw2.github.com/hopsoft/han/master/han.gif)
 
-> Traveling through hyperspace ain't like dusting crops...
+> Traveling through hyperspace ain't like dusting crops, boy!
+> Without precise calculations we could fly right through a star or bounce too close to a supernova, and that'd end your trip real quick, wouldn't it?
 
 ---
 
