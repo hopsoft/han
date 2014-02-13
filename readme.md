@@ -12,8 +12,8 @@ Their responses include resource(s) in a distinct state.
 These resource(s) can typically transition to other states.
 HAN facilitates this navigation by communicating the possibilities.
 
-HAN does not make assumptions about API consumers.
-Neither does it presume to dictate UI concerns.
+*HAN does not make assumptions about API consumers.*
+*Neither does it presume to dictate UI concerns.*
 
 ## State Machine Example
 
@@ -25,8 +25,8 @@ Consider the following.
 * The updated state supports the `delete` transition.
 * The deleted state doesn't support any transitions.
 
-**Note:** *The resource value is the same across all states.*
-*The possible transitions are the only difference.*
+**Note:** *The resource value (__User__) is the same across all states,*
+*the possible transitions are different.*
 
 ## Data Structures
 
