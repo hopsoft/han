@@ -166,7 +166,7 @@ This example illustrates a "find users" call.
 {
   han: true,
   version: "v1",
-  name: "User",
+  name: "UserList",
   value: {
     type: "list",
     count: 3,
@@ -223,7 +223,7 @@ Let's update the `value.items` to be HAN resources.
 {
   han: true,
   version: "v1",
-  name: "User",
+  name: "UserList",
   value: {
     type: "list",
     count: 1,
