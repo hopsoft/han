@@ -1,13 +1,18 @@
-![HAN Solo](https://raw2.github.com/hopsoft/han/master/han.gif)
-
 # HAN - Hypermedia API Navigation
 
-### A specification for communicating hypermedia API navigation concerns
+![HAN Solo](https://raw2.github.com/hopsoft/han/master/han.gif)
 
-HAN considers APIs to be state machines.
-Think of each rendered resource as a state that can transition to another state.
-Consider the following example.
-*While somewhat contrived, it illustrates the concept well.*
+> Traveling through hyperspace ain't like dusting crops...
+
+If you regard APIs as state machines,
+you'll discover that responses include resource(s) which are in a distinct state.
+These resource(s) can typically transition to other states.
+
+**HAN facilitates this behavior by helping communicate the navigational possibilities.**
+
+## State Machine Example
+
+Consider the following.
 
 ![User Resources & Transitions](https://raw2.github.com/hopsoft/han/master/user-example.png)
 
@@ -15,11 +20,15 @@ Consider the following example.
 * The updated state supports the `delete` transition.
 * The deleted state doesn't support any transitions.
 
-**Note:** *The User resource is actually the same across all states.*
-*The difference being the available transitions from each state.*
+**Note:** *The resource value is the same across all states.*
+*The possible transitions are the only difference.*
 
-Because HAN is concerned with resources (their states & transitions),
-it makes no assumptions related to API consumers & does not presume to dictate UI concerns.
+---
+
+HAN does not make assumptions about API consumers.
+Neither does it presume to dictate UI concerns.
+
+---
 
 ## Data Structures
 
@@ -31,9 +40,10 @@ it makes no assumptions related to API consumers & does not presume to dictate U
   han_spec: "",       // the href to the HAN spec
   api_version: "",    // the version of the API being used
   api_spec: "",       // the href to the API spec
+  action: {},         // the action invoked to obtain this response
+  errors: [],         // errors encountered while creating this response
   resource_type: "",  // type type of resource [object, list]
-  resource: {} || [], // the HAN resource(s)
-  errors: []          // errors encountered while creating the response
+  resource: {} || []  // the HAN resource(s)
 }
 ```
 
@@ -81,22 +91,15 @@ An action describes all necessary info required to make a transition for a given
 
 ### Basic ([object value](#object-value))
 
-This example illustrates the "create user" response described above.
+This example illustrates the [create user](#state-machine-example) response outlined above.
 
 ```javascript
 {
-  han: true,
-  version: "v1",
-  name: "User",
-  value: {
-    type: "object",
-    item: { // the item is your custom object
-      id: 1,
-      name: "Han Solo",
-      team: "Rebel Alliance"
-    }
-  },
-  action: { // the action that was invoked to receive this response
+  han_version: "1.0",
+  han_spec: "https://github.com/hopsoft/han",
+  api_version: "2.1",
+  api_spec: "http://api.example.com/spec",
+  action: {
     type: "hard",
     name: "Create User",
     href: "http://api.example.com/users",
@@ -110,34 +113,44 @@ This example illustrates the "create user" response described above.
       team: "Rebel Alliance"
     }
   },
-  transitions: [ // note: transition values are actions
-    {
-      type: "soft", // note: this is a soft transition (params demonstrate possiblities)
-      name: "Update User",
-      href: "http://api.example.com/users/1",
-      verbs: [ "PUT" ],
-      headers: {
-        Accept: "application/vnd.example.v1+json"
-      },
-      formats: [ "json" ],
-      params: { // params should be modified before making the transition
-        name: "New Name",
-        team: "New Team"
-      }
+  errors: [],
+  resource_type: "object",
+  resource: {
+    name: "User",
+    value: { // the item is your custom object
+      id: 1,
+      name: "Han Solo",
+      team: "Rebel Alliance"
     },
-    {
-      type: "hard", // note: this is a hard transition (must be called exactly as presented)
-      name: "Delete User",
-      href: "http://api.example.com/users/1",
-      verbs: [ "DELETE" ],
-      headers: {
-        Accept: "application/vnd.example.v1+json"
+    transitions: [ // note: transition values are actions
+      {
+        type: "soft", // note: this is a soft transition (params demonstrate possiblities)
+        name: "Update User",
+        href: "http://api.example.com/users/1",
+        verbs: [ "PUT" ],
+        headers: {
+          Accept: "application/vnd.example.v1+json"
+        },
+        formats: [ "json" ],
+        params: { // params should be modified before making the transition
+          name: "New Name",
+          team: "New Team"
+        }
       },
-      formats: [ "json" ],
-      params: {}
-    }
-  ],
-  errors: []
+      {
+        type: "hard", // note: this is a hard transition (must be called exactly as presented)
+        name: "Delete User",
+        href: "http://api.example.com/users/1",
+        verbs: [ "DELETE" ],
+        headers: {
+          Accept: "application/vnd.example.v1+json"
+        },
+        formats: [ "json" ],
+        params: {}
+      }
+    ],
+    custom: {}
+  }
 }
 ```
 
