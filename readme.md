@@ -13,9 +13,8 @@ These resource(s) can typically transition to other states.
 HAN facilitates this navigation by communicating the possibilities.
 
 At it's core, HAN defines the [response](#response), [resource](#resource), & resource [transitions](#transitions).
-
-*HAN does not make assumptions about API consumers.*
-*Neither does it presume to dictate UI concerns.*
+It does not make assumptions about API consumers.
+Neither does it presume to dictate UI concerns.
 
 ## State Machine Example
 
