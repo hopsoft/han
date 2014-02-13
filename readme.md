@@ -174,7 +174,7 @@ This example illustrates the [**create user**](#state-machine-example) response 
 This example illustrates a **list users** call.
 It includes a list of HAN resources which looks something like this.
 
-![HAN Response](https://raw2.github.com/hopsoft/han/response/response.png)
+![HAN Response](https://raw2.github.com/hopsoft/han/master/response.png)
 
 ```javascript
 {
