@@ -110,16 +110,16 @@ This example illustrates the [**create user**](#state-machine-example) response 
 ```javascript
 {
   han_version: "1.0",
-  han_spec: "https://github.com/hopsoft/han",
+  han_spec: "https://github.com/hopsoft/han/tree/v1.0",
   api_version: "2.1",
-  api_spec: "http://api.example.com/spec",
+  api_spec: "http://api.example.com/docs/v2.1",
   action: { // the action invoked to obtain this response
     type: "hard",
     name: "Create User",
     href: "http://api.example.com/users",
     verbs: [ "POST" ],
     headers: {
-      Accept: "application/vnd.example.v1+json"
+      Accept: "application/vnd.example.v2.1+json"
     },
     formats: [ "json" ],
     params: {
@@ -144,7 +144,7 @@ This example illustrates the [**create user**](#state-machine-example) response 
         href: "http://api.example.com/users/1",
         verbs: [ "PUT" ],
         headers: {
-          Accept: "application/vnd.example.v1+json"
+          Accept: "application/vnd.example.v2.1+json"
         },
         formats: [ "json" ],
         params: {
@@ -158,7 +158,7 @@ This example illustrates the [**create user**](#state-machine-example) response 
         href: "http://api.example.com/users/1",
         verbs: [ "DELETE" ],
         headers: {
-          Accept: "application/vnd.example.v1+json"
+          Accept: "application/vnd.example.v2.1+json"
         },
         formats: [ "json" ],
         params: {}
@@ -179,16 +179,16 @@ It includes a list of HAN resources which looks something like this.
 ```javascript
 {
   han_version: "1.0",
-  han_spec: "https://github.com/hopsoft/han",
+  han_spec: "https://github.com/hopsoft/han/tree/v1.0",
   api_version: "2.1",
-  api_spec: "http://api.example.com/spec",
+  api_spec: "http://api.example.com/docs/v2.1",
   action: { // the action invoked to obtain this response
     type: "hard",
     name: "List Users",
     href: "http://api.example.com/users",
     verbs: [ "GET" ],
     headers: {
-      Accept: "application/vnd.example.v1+json"
+      Accept: "application/vnd.example.v2.1+json"
     },
     formats: [ "json" ],
     params: {
@@ -213,7 +213,7 @@ It includes a list of HAN resources which looks something like this.
           href: "http://api.example.com/users/1",
           verbs: [ "PUT" ],
           headers: {
-            Accept: "application/vnd.example.v1+json"
+            Accept: "application/vnd.example.v2.1+json"
           },
           formats: [ "json" ],
           params: {
@@ -227,7 +227,7 @@ It includes a list of HAN resources which looks something like this.
           href: "http://api.example.com/users/1",
           verbs: [ "DELETE" ],
           headers: {
-            Accept: "application/vnd.example.v1+json"
+            Accept: "application/vnd.example.v2.1+json"
           },
           formats: [ "json" ],
           params: {}
@@ -249,7 +249,7 @@ It includes a list of HAN resources which looks something like this.
           href: "http://api.example.com/users/2",
           verbs: [ "PUT" ],
           headers: {
-            Accept: "application/vnd.example.v1+json"
+            Accept: "application/vnd.example.v2.1+json"
           },
           formats: [ "json" ],
           params: {
@@ -263,7 +263,7 @@ It includes a list of HAN resources which looks something like this.
           href: "http://api.example.com/users/2",
           verbs: [ "DELETE" ],
           headers: {
-            Accept: "application/vnd.example.v1+json"
+            Accept: "application/vnd.example.v2.1+json"
           },
           formats: [ "json" ],
           params: {}
@@ -285,7 +285,7 @@ It includes a list of HAN resources which looks something like this.
           href: "http://api.example.com/users/3",
           verbs: [ "PUT" ],
           headers: {
-            Accept: "application/vnd.example.v1+json"
+            Accept: "application/vnd.example.v2.1+json"
           },
           formats: [ "json" ],
           params: {
@@ -299,7 +299,7 @@ It includes a list of HAN resources which looks something like this.
           href: "http://api.example.com/users/3",
           verbs: [ "DELETE" ],
           headers: {
-            Accept: "application/vnd.example.v1+json"
+            Accept: "application/vnd.example.v2.1+json"
           },
           formats: [ "json" ],
           params: {}
