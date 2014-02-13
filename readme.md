@@ -12,6 +12,9 @@ Their responses include resource(s) in a distinct state.
 These resource(s) can typically transition to other states.
 HAN facilitates this navigation by communicating the possibilities.
 
+At it's core, HAN defines the response, resource, & transitions.
+The resource can be either a single object or a list of objects.
+
 **Note:** *HAN does not make assumptions about API consumers.*
 *Neither does it presume to dictate UI concerns.*
 
@@ -37,6 +40,8 @@ but the examples below are written in JavaScript for the brevity that inline com
 
 ### Response
 
+A response is the root element which contains the entire result.
+
 ```javascript
 {
   han_version: "",    // the version of the HAN spec being used
@@ -45,6 +50,7 @@ but the examples below are written in JavaScript for the brevity that inline com
   api_spec: "",       // the href to the API spec
   action: {},         // the action invoked to obtain this response
   errors: [],         // errors encountered while creating this response
+  custom: {},         // a container for custom meta data about the response
   resource_type: "",  // type type of resource [object, list]
   resource: {} || []  // the HAN resource(s)
 }
@@ -82,7 +88,7 @@ An action describes all necessary info required to make a transition for a given
 #### Action Types
 
 * **hard** - indicates the action must be invoked exactly as outlined
-* **soft** - indicates the action param values should be updated prior to invocation
+* **soft** - indicates the action params should be modified prior to invocation
 
 ### Error
 
@@ -122,7 +128,8 @@ This example illustrates the [**create user**](#state-machine-example) response 
       team: "Rebel Alliance"
     }
   },
-  errors: [],
+  errors: [], // errors encountered while creating this response
+  custom: {}, // a container for custom meta data about the response
   resource_type: "object",
   resource: {
     name: "User",
@@ -133,7 +140,7 @@ This example illustrates the [**create user**](#state-machine-example) response 
     },
     transitions: [ // the actions that can be performed with the resource
       {
-        type: "soft", // param values should be updated prior to invocation
+        type: "soft", // params should be modified prior to invocation
         name: "Update User",
         href: "http://api.example.com/users/1",
         verbs: [ "PUT" ],
@@ -142,8 +149,8 @@ This example illustrates the [**create user**](#state-machine-example) response 
         },
         formats: [ "json" ],
         params: {
-          name: "New Name",
-          team: "New Team"
+          name: "Han Solo", // value to update to [optional]
+          team: "Rebel Alliance" // value to update to [optional]
         }
       },
       {
@@ -189,7 +196,8 @@ It includes a list of HAN resources which looks something like this.
       team: "Rebel Alliance"
     }
   },
-  errors: [],
+  errors: [], // errors encountered while creating this response
+  custom: {}, // a container for custom meta data about the response
   resource_type: "list",
   resource: [
     {
@@ -201,7 +209,7 @@ It includes a list of HAN resources which looks something like this.
       },
       transitions: [ // the actions that can be performed with the resource
         {
-          type: "soft", // param values should be updated prior to invocation
+          type: "soft", // params should be modified prior to invocation
           name: "Update User",
           href: "http://api.example.com/users/1",
           verbs: [ "PUT" ],
@@ -210,8 +218,8 @@ It includes a list of HAN resources which looks something like this.
           },
           formats: [ "json" ],
           params: {
-            name: "New Name",
-            team: "New Team"
+            name: "Han Solo", // value to update to [optional]
+            team: "Rebel Alliance" // value to update to [optional]
           }
         },
         {
@@ -237,7 +245,7 @@ It includes a list of HAN resources which looks something like this.
       },
       transitions: [ // the actions that can be performed with the resource
         {
-          type: "soft", // param values should be updated prior to invocation
+          type: "soft", // params should be modified prior to invocation
           name: "Update User",
           href: "http://api.example.com/users/2",
           verbs: [ "PUT" ],
@@ -246,8 +254,8 @@ It includes a list of HAN resources which looks something like this.
           },
           formats: [ "json" ],
           params: {
-            name: "New Name",
-            team: "New Team"
+            name: "Luke Skywalker", // value to update to [optional]
+            team: "Rebel Alliance" // value to update to [optional]
           }
         },
         {
@@ -273,7 +281,7 @@ It includes a list of HAN resources which looks something like this.
       },
       transitions: [ // the actions that can be performed with the resource
         {
-          type: "soft", // param values should be updated prior to invocation
+          type: "soft", // params should be modified prior to invocation
           name: "Update User",
           href: "http://api.example.com/users/3",
           verbs: [ "PUT" ],
@@ -282,8 +290,8 @@ It includes a list of HAN resources which looks something like this.
           },
           formats: [ "json" ],
           params: {
-            name: "New Name",
-            team: "New Team"
+            name: "Princess Leia", // value to update to [optional]
+            team: "Rebel Alliance" // value to update to [optional]
           }
         },
         {
