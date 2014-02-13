@@ -226,7 +226,7 @@ Let's update the `value.items` to be HAN resources.
   name: "UserList",
   value: {
     type: "list",
-    count: 1,
+    count: 3,
     items: [
       {
         han: true,
@@ -234,7 +234,7 @@ Let's update the `value.items` to be HAN resources.
         name: "User",
         value: {
           type: "object",
-          item: {
+          item: { // the item is your custom object
             id: 1,
             name: "Han Solo",
             team: "Rebel Alliance"
@@ -275,7 +275,7 @@ Let's update the `value.items` to be HAN resources.
         name: "User",
         value: {
           type: "object",
-          item: {
+          item: { // the item is your custom object
             id: 2,
             name: "Luke Skywalker",
             team: "Rebel Alliance"
@@ -316,7 +316,7 @@ Let's update the `value.items` to be HAN resources.
         name: "User",
         value: {
           type: "object",
-          item: {
+          item: { // the item is your custom object
             id: 3,
             name: "Princess Leia",
             team: "Rebel Alliance"
