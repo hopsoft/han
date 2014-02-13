@@ -15,8 +15,8 @@ Consider the following example.
 * The updated state supports the `delete` transition.
 * The deleted state doesn't support any transitions.
 
-**Note**: The User resource is actually the same across all states.
-The difference being the available transitions from each state.
+**Note:** *The User resource is actually the same across all states.*
+*The difference being the available transitions from each state.*
 
 Because HAN is concerned with resources (their states & transitions),
 it makes no assumptions related to API consumers & does not presume to dictate UI concerns.
@@ -213,12 +213,11 @@ This technique looks something like this.
 
 ![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
 
-**Note**: The [action](#resource) attriubte should be omitted from embedded HAN resources as it's not relevant.
+**Note:** *The [action](#resource) attriubte should be omitted from embedded HAN resources as it's not relevant.*
 
 Consider the "find users" example above.
-Lets update the `value` `items` to be HAN resources.
+Let's update the `value.items` to be HAN resources.
 
-**Note**: Each item now contains the hypermedia info required to navigate all possible transitions.
 
 ```javascript
 {
@@ -371,3 +370,6 @@ Lets update the `value` `items` to be HAN resources.
   errors: []
 }
 ```
+
+While significantly more verbose,
+each `item` now contains the hypermedia info required to navigate all possible transitions.
