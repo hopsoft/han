@@ -4,6 +4,8 @@
 
 > Traveling through hyperspace ain't like dusting crops...
 
+---
+
 If you regard APIs as state machines,
 you'll discover that responses include resource(s) which are in a distinct state.
 These resource(s) can typically transition to other states.
