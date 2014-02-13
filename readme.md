@@ -25,13 +25,15 @@ Consider the following.
 * The updated state supports the `delete` transition.
 * The deleted state doesn't support any transitions.
 
-**Note:** *The resource value (__User__) is the same across all states,*
-*the possible transitions are different.*
+**Note:** *The resource value (__User__) is the same across all states.*
+*Only the possible transitions are different.*
+
+## Spec
+
+HAN respsonses are JSON objects.
+The examples below are written in JavaScript for the brevity that inline comments allow.
 
 ## Data Structures
-
-While HAN respsonses are JSON objects,
-the examples are written with JavaScript for the brevity that inline comments allow.
 
 ### Response
 
