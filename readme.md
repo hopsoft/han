@@ -12,8 +12,8 @@ Their responses include resource(s) in a distinct state.
 These resource(s) can typically transition to other states.
 HAN facilitates this navigation by communicating the possibilities.
 
-At it's core, HAN defines the [response](#response), [resource](#resource), & [transitions](#transitions).
-The resource value can be a single object or a list of objects.
+At it's core, HAN defines the [response](#response), [resource](#resource), & resource [transitions](#transitions).
+The response's resource value can be a single object or a list of objects.
 
 **Note:** *HAN does not make assumptions about API consumers.*
 *Neither does it presume to dictate UI concerns.*
