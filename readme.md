@@ -12,7 +12,7 @@ Their responses include resource(s) in a distinct state.
 These resource(s) can typically transition to other states.
 HAN facilitates this navigation by communicating the possibilities.
 
-*HAN does not make assumptions about API consumers.*
+**Note:** *HAN does not make assumptions about API consumers.*
 *Neither does it presume to dictate UI concerns.*
 
 ## State Machine Example
@@ -30,8 +30,8 @@ Consider the following.
 
 ## Spec
 
-HAN respsonses are JSON objects.
-The examples below are written in JavaScript for the brevity that inline comments allow.
+HAN respsonses are JSON objects,
+but the examples below are written in JavaScript for the brevity that inline comments allow.
 
 ## Data Structures
 
@@ -98,9 +98,9 @@ An action describes all necessary info required to make a transition for a given
 ## Examples
 
 
-### Basic ([object value](#object-value))
+### Single Resource
 
-This example illustrates the [create user](#state-machine-example) response outlined above.
+This example illustrates the [**create user**](#state-machine-example) response outlined above.
 
 ```javascript
 {
@@ -163,28 +163,143 @@ This example illustrates the [create user](#state-machine-example) response outl
 }
 ```
 
-### Basic ([list value](#list-value))
+### Multiple Resources
 
-This example illustrates a "find users" call.
+This example illustrates a **list users** call.
+It includes a list of HAN resources which looks something like this.
 
-```javascript
-```
-
-### Embedded HAN Resources
-
-HAN resource values may contain embedded HAN resources.
-This technique yields a data structure which looks like this.
-
-![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
-
-**Note:** *The [action](#resource) attriubte should be omitted from embedded HAN resources as it's not relevant.*
-
-Consider the ["find users"](#basic-list-value) example above.
-Let's update the `value.items` to be HAN resources.
-
+![HAN Resource](https://raw2.github.com/hopsoft/han/master/response.png)
 
 ```javascript
+{
+  han_version: "1.0",
+  han_spec: "https://github.com/hopsoft/han",
+  api_version: "2.1",
+  api_spec: "http://api.example.com/spec",
+  action: { // the action invoked to obtain this response
+    type: "hard",
+    name: "List Users",
+    href: "http://api.example.com/users",
+    verbs: [ "GET" ],
+    headers: {
+      Accept: "application/vnd.example.v1+json"
+    },
+    formats: [ "json" ],
+    params: {
+      team: "Rebel Alliance"
+    }
+  },
+  errors: [],
+  resource_type: "list",
+  resource: [
+    {
+      name: "User",
+      value: { // the value is your custom object
+        id: 1,
+        name: "Han Solo",
+        team: "Rebel Alliance"
+      },
+      transitions: [ // the actions that can be performed with the resource
+        {
+          type: "soft", // param values should be updated prior to invocation
+          name: "Update User",
+          href: "http://api.example.com/users/1",
+          verbs: [ "PUT" ],
+          headers: {
+            Accept: "application/vnd.example.v1+json"
+          },
+          formats: [ "json" ],
+          params: { // params should be modified before making the transition
+            name: "New Name",
+            team: "New Team"
+          }
+        },
+        {
+          type: "hard", // must be invoked exactly as outlined
+          name: "Delete User",
+          href: "http://api.example.com/users/1",
+          verbs: [ "DELETE" ],
+          headers: {
+            Accept: "application/vnd.example.v1+json"
+          },
+          formats: [ "json" ],
+          params: {}
+        }
+      ],
+      custom: {} // a container for custom meta data about the resource
+    },
+    {
+      name: "User",
+      value: { // the value is your custom object
+        id: 2,
+        name: "Luke Skywalker",
+        team: "Rebel Alliance"
+      },
+      transitions: [ // the actions that can be performed with the resource
+        {
+          type: "soft", // param values should be updated prior to invocation
+          name: "Update User",
+          href: "http://api.example.com/users/2",
+          verbs: [ "PUT" ],
+          headers: {
+            Accept: "application/vnd.example.v1+json"
+          },
+          formats: [ "json" ],
+          params: { // params should be modified before making the transition
+            name: "New Name",
+            team: "New Team"
+          }
+        },
+        {
+          type: "hard", // must be invoked exactly as outlined
+          name: "Delete User",
+          href: "http://api.example.com/users/2",
+          verbs: [ "DELETE" ],
+          headers: {
+            Accept: "application/vnd.example.v1+json"
+          },
+          formats: [ "json" ],
+          params: {}
+        }
+      ],
+      custom: {} // a container for custom meta data about the resource
+    },
+    {
+      name: "User",
+      value: { // the value is your custom object
+        id: 3,
+        name: "Princess Leia",
+        team: "Rebel Alliance"
+      },
+      transitions: [ // the actions that can be performed with the resource
+        {
+          type: "soft", // param values should be updated prior to invocation
+          name: "Update User",
+          href: "http://api.example.com/users/3",
+          verbs: [ "PUT" ],
+          headers: {
+            Accept: "application/vnd.example.v1+json"
+          },
+          formats: [ "json" ],
+          params: { // params should be modified before making the transition
+            name: "New Name",
+            team: "New Team"
+          }
+        },
+        {
+          type: "hard", // must be invoked exactly as outlined
+          name: "Delete User",
+          href: "http://api.example.com/users/3",
+          verbs: [ "DELETE" ],
+          headers: {
+            Accept: "application/vnd.example.v1+json"
+          },
+          formats: [ "json" ],
+          params: {}
+        }
+      ],
+      custom: {} // a container for custom meta data about the resource
+    },
+  ]
+}
 ```
-
-While significantly more verbose,
-each `item` now contains the hypermedia info required to navigate all possible transitions.
