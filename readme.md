@@ -10,8 +10,7 @@
 APIs are state machines.
 Their responses include resource(s) in a distinct state.
 These resource(s) can typically transition to other states.
-
-HAN facilitates this navigation communicating the possibilities.
+HAN facilitates this navigation by communicating the possibilities.
 
 ## State Machine Example
 
