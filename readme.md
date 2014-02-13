@@ -215,7 +215,7 @@ This technique yields a data structure that looks like this.
 
 **Note:** *The [action](#resource) attriubte should be omitted from embedded HAN resources as it's not relevant.*
 
-Consider the "find users" example above.
+Consider the ["find users"](#basic-list-value) example above.
 Let's update the `value.items` to be HAN resources.
 
 
