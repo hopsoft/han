@@ -23,47 +23,30 @@ it makes no assumptions related to API consumers & does not presume to dictate U
 
 ## Data Structures
 
+### Response
+
+```javascript
+{
+  han_version: "",    // the version of the HAN spec being used
+  han_spec: "",       // the href to the HAN spec
+  api_version: "",    // the version of the API being used
+  api_spec: "",       // the href to the API spec
+  resource_type: "",  // type type of resource [object, list]
+  resource: {} || [], // the HAN resource(s)
+  errors: []          // errors encountered while creating the response
+}
+```
+
 ### Resource
 
 A resource is a container that wraps a custom value & includes hypermedia meta data.
 
 ```javascript
 {
-  han: true,       // indicates that this is a HAN resource
-  version: "",     // the resource version
   name: "",        // the name of the resource
   value: {},       // the resource value
-  action: {},      // [the action performed to obtain the resource]
-  transitions: [], // the navigational actions that can be performed with the resource
-  errors: []       // the errors encounted while obtaining the resource
-}
-```
-
-#### Resource Values
-
-Resource values may contain an object (associative array) or a list (array).
-Values contain metadata that describe their contents.
-
-##### Object Value
-
-```javascript
-{
-  value: {
-    type: "object", // the type of value [list, object]
-    item: {}        // the item
-  }
-}
-```
-
-##### List Value
-
-```javascript
-{
-  value: {
-    type: "list", // the type of value [list, object]
-    count: 0,     // the number of items in the list (required for list types)
-    items: []     // this list of items
-  }
+  transitions: [], // the navigational actions that can be performed
+  custom: {}       // a container for custom meta data
 }
 ```
 
@@ -209,7 +192,7 @@ This example illustrates a "find users" call.
 ### Embedded HAN Resources
 
 HAN resource values may contain embedded HAN resources.
-This technique yields a data structure that looks like this.
+This technique yields a data structure which looks like this.
 
 ![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
 
