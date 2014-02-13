@@ -201,7 +201,7 @@ This example illustrates a "find users" call.
       team: "Rebel Alliance"
     }
   },
-  transitions: [], // note: no transitions are available for the search result itself
+  transitions: [], // note: no transitions are available for the user list
   errors: []
 }
 ```
@@ -209,7 +209,7 @@ This example illustrates a "find users" call.
 ### Embedded HAN Resources
 
 HAN resource values may contain embedded HAN resources.
-This technique looks something like this.
+This technique yields a data structure that looks like this.
 
 ![HAN Resource](https://raw2.github.com/hopsoft/han/master/resource.png)
 
