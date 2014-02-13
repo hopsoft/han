@@ -13,10 +13,9 @@ These resource(s) can typically transition to other states.
 HAN facilitates this navigation by communicating the possibilities.
 
 At it's core, HAN defines the [response](#response), [resource](#resource), & resource [transitions](#transitions).
-*The response's resource value can be a single object or a list of objects.*
 
-HAN does not make assumptions about API consumers.
-Neither does it presume to dictate UI concerns.
+*HAN does not make assumptions about API consumers.*
+*Neither does it presume to dictate UI concerns.*
 
 ## State Machine Example
 
@@ -41,6 +40,7 @@ but the examples below are written in JavaScript for the brevity that inline com
 ### Response
 
 A response is the root element which contains the entire result.
+*Note that the response's resource value can be a single object or a list of objects.*
 
 ```javascript
 {
