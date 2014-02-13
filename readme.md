@@ -141,7 +141,7 @@ This example illustrates the [**create user**](#state-machine-example) response 
           Accept: "application/vnd.example.v1+json"
         },
         formats: [ "json" ],
-        params: { // params should be modified before making the transition
+        params: {
           name: "New Name",
           team: "New Team"
         }
@@ -209,7 +209,7 @@ It includes a list of HAN resources which looks something like this.
             Accept: "application/vnd.example.v1+json"
           },
           formats: [ "json" ],
-          params: { // params should be modified before making the transition
+          params: {
             name: "New Name",
             team: "New Team"
           }
@@ -245,7 +245,7 @@ It includes a list of HAN resources which looks something like this.
             Accept: "application/vnd.example.v1+json"
           },
           formats: [ "json" ],
-          params: { // params should be modified before making the transition
+          params: {
             name: "New Name",
             team: "New Team"
           }
@@ -281,7 +281,7 @@ It includes a list of HAN resources which looks something like this.
             Accept: "application/vnd.example.v1+json"
           },
           formats: [ "json" ],
-          params: { // params should be modified before making the transition
+          params: {
             name: "New Name",
             team: "New Team"
           }
