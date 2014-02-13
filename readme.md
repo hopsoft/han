@@ -13,10 +13,10 @@ These resource(s) can typically transition to other states.
 HAN facilitates this navigation by communicating the possibilities.
 
 At it's core, HAN defines the [response](#response), [resource](#resource), & resource [transitions](#transitions).
-The response's resource value can be a single object or a list of objects.
+*The response's resource value can be a single object or a list of objects.*
 
-**Note:** *HAN does not make assumptions about API consumers.*
-*Neither does it presume to dictate UI concerns.*
+HAN does not make assumptions about API consumers.
+Neither does it presume to dictate UI concerns.
 
 ## State Machine Example
 
