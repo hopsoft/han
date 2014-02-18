@@ -39,7 +39,7 @@ but the examples below are written in JavaScript for the brevity that inline com
 ### Response
 
 A response is the root element which contains the entire result.
-*Note that the response's resource value can be a single object or a list of objects.*
+*Note that the response's resource value can be a single [resource](#resource) or a list of [resources](#resource).*
 
 ```javascript
 {
