@@ -38,7 +38,7 @@ but the examples below are written in JavaScript for the brevity that inline com
 
 ### Response
 
-A response is the root element which contains the entire result.
+A container which wraps a [resource](#resource).
 *Note that the response's resource value can be a single [resource](#resource) or a list of [resources](#resource).*
 
 ```javascript
@@ -57,7 +57,7 @@ A response is the root element which contains the entire result.
 
 ### Resource
 
-A resource is a container that wraps a custom value & includes hypermedia meta data.
+A container that wraps a custom value & includes hypermedia data.
 
 ```javascript
 {
@@ -70,7 +70,7 @@ A resource is a container that wraps a custom value & includes hypermedia meta d
 
 ### Action
 
-An action describes all necessary info required to make a transition for a given resource.
+Describes how to transition a [resource](#resource).
 
 ```javascript
 {
