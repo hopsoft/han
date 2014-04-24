@@ -47,6 +47,9 @@ A container which wraps a [resource](#resource).
   han_spec: "",       // the href to the HAN spec
   api_version: "",    // the version of the API being used
   api_spec: "",       // the href to the API spec
+  request_time: "",   // the time the action was invoked in UTC ISO 8601
+  response_time: "",  // the time the response was rendered in UTC ISO 8601
+  duration: "",       // the total time spent on the server in milliseconds
   action: {},         // the action invoked to obtain this response
   errors: [],         // errors encountered while creating this response
   custom: {},         // a container for custom meta data about the response
@@ -113,6 +116,9 @@ This example illustrates the [**create user**](#state-machine-example) response 
   han_spec: "https://github.com/hopsoft/han/tree/v1.0",
   api_version: "2.1",
   api_spec: "http://api.example.com/docs/v2.1",
+  request_time: "2014-04-24T17:25:03.520Z",
+  response_time: "2014-04-24T17:25:03.527Z",
+  duration: 6.711,
   action: { // the action invoked to obtain this response
     type: "hard",
     name: "Create User",
@@ -182,6 +188,9 @@ It includes a list of HAN resources which looks something like this.
   han_spec: "https://github.com/hopsoft/han/tree/v1.0",
   api_version: "2.1",
   api_spec: "http://api.example.com/docs/v2.1",
+  request_time: "2014-04-24T17:25:33.167Z",
+  response_time: "2014-04-24T17:25:33.168Z",
+  duration: 1.671,
   action: { // the action invoked to obtain this response
     type: "hard",
     name: "List Users",
