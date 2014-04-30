@@ -96,11 +96,7 @@ Examples are optional.
 
 If present, they should demonstrate how to perform the action with a specific technology.
 The intent is to remove any ambiguity about how to perform the action.
-
-Some examples that we've found useful are.
-
-* curl
-* jquery
+Some examples that we've found useful are `curl` & `jquery`.
 
 #### Action Types
 
