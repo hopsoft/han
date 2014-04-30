@@ -190,7 +190,8 @@ This example illustrates the [**create user**](#state-machine-example) response 
     ],
     custom: {} // a container for custom meta data about the resource
   }
-} ```
+}
+```
 
 ### Multiple Resources
 
