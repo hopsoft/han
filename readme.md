@@ -90,7 +90,7 @@ Describes how to transition a [resource](#resource).
 }
 ```
 
-#### examples
+#### A note on examples
 
 Examples are optional.
 
