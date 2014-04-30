@@ -90,18 +90,18 @@ Describes how to transition a [resource](#resource).
 }
 ```
 
-#### A note on examples
+#### Action Types
+
+* **hard** - indicates the action must be invoked exactly as outlined
+* **soft** - indicates the action params should be modified prior to invocation
+
+#### Examples
 
 Examples are optional.
 
 If present, they should demonstrate how to perform the action with a specific technology.
 The intent is to remove any ambiguity about how to perform the action.
 Some examples that we've found useful are `curl` & `jquery`.
-
-#### Action Types
-
-* **hard** - indicates the action must be invoked exactly as outlined
-* **soft** - indicates the action params should be modified prior to invocation
 
 ### Error
 
