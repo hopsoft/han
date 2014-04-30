@@ -86,8 +86,21 @@ Describes how to transition a [resource](#resource).
   headers: [], // the http headers required by the action
   formats: [], // the formats supported by the action [json, xml, ...]
   params: {},  // the params supported by the action
+  examples: {} // named examples that demonstrate how to perform the transition
 }
 ```
+
+#### examples
+
+Examples are optional.
+
+If present, they should demonstrate how to perform the action with a specific technology.
+The intent is to remove any ambiguity about how to perform the action.
+
+Some examples that we've found useful are.
+
+* curl
+* jquery
 
 #### Action Types
 
@@ -106,7 +119,6 @@ Describes how to transition a [resource](#resource).
 ```
 
 ## Examples
-
 
 ### Single Resource
 
@@ -158,6 +170,10 @@ This example illustrates the [**create user**](#state-machine-example) response 
         params: {
           name: "Han Solo", // value to update to [optional]
           team: "Rebel Alliance" // value to update to [optional]
+        },
+        examples: {
+          curl: "curl --request PUT --header 'Accept: application/vnd.example.v2.1+json' --data-urlencode 'name=Han Solo' --data-urlencode 'team=Rebel Alliance' http://api.example.com/users/1",
+          jquery: "jQuery.ajax({ url: 'http://api.example.com/users/1', type: 'PUT', accepts: 'application/vnd.example.v2.1+json', data: { name: 'Han Solo', team: 'Rebel Alliance' } })"
         }
       },
       {
@@ -169,13 +185,16 @@ This example illustrates the [**create user**](#state-machine-example) response 
           Accept: "application/vnd.example.v2.1+json"
         },
         formats: [ "json" ],
-        params: {}
+        params: {},
+        examples: {
+          curl: "curl --request DELETE --header 'Accept: application/vnd.example.v2.1+json' http://api.example.com/users/1",
+          jquery: "jQuery.ajax({ url: 'http://api.example.com/users/1', type: 'DELETE', accepts: 'application/vnd.example.v2.1+json' })"
+        }
       }
     ],
     custom: {} // a container for custom meta data about the resource
   }
-}
-```
+} ```
 
 ### Multiple Resources
 
@@ -230,6 +249,10 @@ It includes a list of HAN resources which looks something like this.
           params: {
             name: "Han Solo", // value to update to [optional]
             team: "Rebel Alliance" // value to update to [optional]
+          },
+          examples: {
+            curl: "curl --request PUT --header 'Accept: application/vnd.example.v2.1+json' --data-urlencode 'name=Han Solo' --data-urlencode 'team=Rebel Alliance' http://api.example.com/users/1",
+            jquery: "jQuery.ajax({ url: 'http://api.example.com/users/1', type: 'PUT', accepts: 'application/vnd.example.v2.1+json', data: { name: 'Han Solo', team: 'Rebel Alliance' } })"
           }
         },
         {
@@ -241,7 +264,11 @@ It includes a list of HAN resources which looks something like this.
             Accept: "application/vnd.example.v2.1+json"
           },
           formats: [ "json" ],
-          params: {}
+          params: {},
+          examples: {
+            curl: "curl --request DELETE --header 'Accept: application/vnd.example.v2.1+json' http://api.example.com/users/1",
+            jquery: "jQuery.ajax({ url: 'http://api.example.com/users/1', type: 'DELETE', accepts: 'application/vnd.example.v2.1+json' })"
+          }
         }
       ],
       custom: {} // a container for custom meta data about the resource
@@ -266,6 +293,10 @@ It includes a list of HAN resources which looks something like this.
           params: {
             name: "Luke Skywalker", // value to update to [optional]
             team: "Rebel Alliance" // value to update to [optional]
+          },
+          examples: {
+            curl: "curl --request PUT --header 'Accept: application/vnd.example.v2.1+json' --data-urlencode 'name=Luke Skywalker' --data-urlencode 'team=Rebel Alliance' http://api.example.com/users/2",
+            jquery: "jQuery.ajax({ url: 'http://api.example.com/users/2', type: 'PUT', accepts: 'application/vnd.example.v2.1+json', data: { name: 'Luke Skywalker', team: 'Rebel Alliance' } })"
           }
         },
         {
@@ -277,7 +308,11 @@ It includes a list of HAN resources which looks something like this.
             Accept: "application/vnd.example.v2.1+json"
           },
           formats: [ "json" ],
-          params: {}
+          params: {},
+          examples: {
+            curl: "curl --request DELETE --header 'Accept: application/vnd.example.v2.1+json' http://api.example.com/users/2",
+            jquery: "jQuery.ajax({ url: 'http://api.example.com/users/2', type: 'DELETE', accepts: 'application/vnd.example.v2.1+json' })"
+          }
         }
       ],
       custom: {} // a container for custom meta data about the resource
@@ -302,6 +337,10 @@ It includes a list of HAN resources which looks something like this.
           params: {
             name: "Princess Leia", // value to update to [optional]
             team: "Rebel Alliance" // value to update to [optional]
+          },
+          examples: {
+            curl: "curl --request PUT --header 'Accept: application/vnd.example.v2.1+json' --data-urlencode 'name=Princess Leia' --data-urlencode 'team=Rebel Alliance' http://api.example.com/users/3",
+            jquery: "jQuery.ajax({ url: 'http://api.example.com/users/3', type: 'PUT', accepts: 'application/vnd.example.v2.1+json', data: { name: 'Princess Leia', team: 'Rebel Alliance' } })"
           }
         },
         {
@@ -313,7 +352,11 @@ It includes a list of HAN resources which looks something like this.
             Accept: "application/vnd.example.v2.1+json"
           },
           formats: [ "json" ],
-          params: {}
+          params: {},
+          examples: {
+            curl: "curl --request DELETE --header 'Accept: application/vnd.example.v2.1+json' http://api.example.com/users/3",
+            jquery: "jQuery.ajax({ url: 'http://api.example.com/users/3', type: 'DELETE', accepts: 'application/vnd.example.v2.1+json' })"
+          }
         }
       ],
       custom: {} // a container for custom meta data about the resource
