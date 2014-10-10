@@ -1,7 +1,5 @@
 # HAN - Hypermedia API Navigation
 
-[![Gitter chat](https://badges.gitter.im/hopsoft/han.png)](https://gitter.im/hopsoft/han)
-
 > Traveling through hyperspace ain't like dusting crops, boy!
 > Without precise calculations we could fly right through a star or bounce too
 > close to a supernova, and that'd end your trip real quick, wouldn't it?
