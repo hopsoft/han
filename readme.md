@@ -1,11 +1,11 @@
 # HAN - Hypermedia API Navigation
 
+![HAN Solo](https://raw2.github.com/hopsoft/han/master/han.jpg)
+
 > Traveling through hyperspace ain't like dusting crops, boy!
 > Without precise calculations we could fly right through a star or bounce too
 > close to a supernova, and that'd end your trip real quick, wouldn't it?
 > --Han Solo
-
-![HAN Solo](https://raw2.github.com/hopsoft/han/master/han.gif)
 
 APIs are state machines.
 Their responses include resource(s) in a distinct state.
