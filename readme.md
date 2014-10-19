@@ -7,6 +7,8 @@
 > close to a supernova, and that'd end your trip real quick, wouldn't it?
 > --Han Solo
 
+---
+
 APIs are state machines.
 Their responses include resource(s) in a distinct state.
 These resource(s) can typically transition to other states.
