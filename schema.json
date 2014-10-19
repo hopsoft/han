@@ -1,0 +1,43 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"han_version": {
+			"type": "string",
+			"pattern": "^\\d+\\.\\d+$"
+		},
+		"han_spec": {
+			"type": "string"
+		},
+		"api_version": {
+			"type": "string",
+			"pattern": "^\\d+\\.\\d+$"
+		},
+		"request_time": {
+			"type": "string",
+			"pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3,}Z$"
+		},
+		"response_time": {
+			"type": "string",
+			"pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3,}Z$"
+		},
+		"duration": { "type": "number" },
+		"action": { "type": "object" },
+		"errors": { "type": "array" },
+		"custom": { "type": "object" },
+		"resource_type": { "type": "string" },
+		"resource": {}
+	},
+	"additionalProperties": true,
+	"required": [
+		"han_version",
+		"han_spec",
+		"api_version",
+		"request_time",
+		"response_time",
+		"duration",
+		"action",
+		"errors",
+		"resource_type"
+	]
+}
