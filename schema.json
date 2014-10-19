@@ -4,7 +4,6 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"type": "object",
 	"properties": {
-		"test": { "type": "object" }
 		"han_version": {
 			"type": "string",
 			"pattern": "^\\d+\\.\\d+$"
@@ -33,7 +32,6 @@
 	},
 	"additionalProperties": true,
 	"required": [
-		"test",
 		"han_version",
 		"han_spec",
 		"api_version",
