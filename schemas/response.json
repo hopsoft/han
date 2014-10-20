@@ -23,11 +23,17 @@
       "type": "string",
       "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3,}Z$"
     },
-    "duration": { "type": "number" },
+    "duration": {
+      "type": "number",
+      "minimum": 0
+    },
     "action": { "type": "object" },
     "errors": { "type": "array" },
     "custom": { "type": "object" },
-    "resource_type": { "type": "string" },
+    "resource_type": {
+      "type": "string",
+      "enum": ["object", "array"]
+    },
     "resource": {}
   },
   "additionalProperties": true,

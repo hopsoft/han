@@ -1,0 +1,41 @@
+{
+  "id": "https://github.com/hopsoft/han/schemas/transition.json#",
+  "description": "HAN Action schema spec v1.2",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": { "type": "string" },
+    "name": { "type": "string" },
+    "href": { "type": "string" },
+    "verbs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": [{
+        "type": "string",
+        "enum": ["OPTIONS", "GET", "HEAD", "POST", "PUT", "DELETE", "TRACE", "CONNECT"]
+      }]
+    },
+    "headers": { "type": "object" },
+    "formats": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": [{
+        "type": "string",
+        "enum": ["json", "xml"]
+      }]
+    },
+    "params": { "type": "object" },
+    "examples": { "type": "object" }
+  },
+  "additionalProperties": true,
+  "required": [
+    "type",
+    "name",
+    "href",
+    "verbs",
+    "headers",
+    "formats"
+  ]
+}
