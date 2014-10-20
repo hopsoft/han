@@ -364,6 +364,6 @@ It includes a list of HAN resources which looks something like this.
 
 ## Schema
 
-The [HAN schema](https://github.com/hopsoft/han/blob/master/schema.json)
+The [HAN schema](https://github.com/hopsoft/han/blob/master/schemas)
 is defined with the [json-schema spec](http://json-schema.org/documentation.html).
 
