@@ -1,5 +1,5 @@
 {
-  "id": "https://github.com/hopsoft/han/schemas/resource.json#",
+  "id": "https://github.com/hopsoft/han/schemas/resource.json",
   "description": "HAN Resource schema spec v1.2",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
