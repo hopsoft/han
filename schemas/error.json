@@ -1,4 +1,4 @@
-module.exports = {
+{
   "id": "https://github.com/hopsoft/han/schemas/error.json",
   "description": "HAN Error schema spec v1.2",
   "$schema": "http://json-schema.org/draft-04/schema#",
@@ -6,11 +6,11 @@ module.exports = {
   "properties": {
     "name": { "type": "string" },
     "message": { "type": "string" },
-    "backtrace": { "type": "array" },
-    "inner_error": { "type": ["null", "object"] }
+    "backtrace": { "type": ["array", "null"] },
+    "inner_error": { "type": ["object", "null"] }
   },
   "additionalProperties": true,
   "required": [
     "name"
   ]
-};
+}

@@ -1,18 +1,17 @@
 {
-  "id": "https://github.com/hopsoft/han/schemas/resource.json",
+  "id": "https://github.com/hopsoft/han/schemas/resource.json#",
   "description": "HAN Resource schema spec v1.2",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
     "name": { "type": "string" },
-    "value": {},
+    "value": { "type": [ "object", "array", "null" ] },
     "transitions": { "type": "array" },
     "custom": { "type": "object" }
   },
   "additionalProperties": true,
   "required": [
     "name",
-    "value",
     "transitions"
   ]
 }

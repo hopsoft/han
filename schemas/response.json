@@ -34,7 +34,7 @@
       "type": "string",
       "enum": ["object", "array"]
     },
-    "resource": {}
+    "resource": { "type": ["object", "array", "null"]}
   },
   "additionalProperties": true,
   "required": [
