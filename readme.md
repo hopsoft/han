@@ -1,6 +1,6 @@
 # HAN - Hypermedia API Navigation
 
-![HAN Solo](https://raw2.github.com/hopsoft/han/master/han.jpg)
+![HAN Solo](https://raw.githubusercontent.com/hopsoft/han/master/han.jpg)
 
 > Traveling through hyperspace ain't like dusting crops, boy!
 > Without precise calculations we could fly right through a star or bounce too
@@ -22,7 +22,7 @@ Neither does it presume to dictate UI concerns.
 
 Consider the following.
 
-![User Resources & Transitions](https://raw2.github.com/hopsoft/han/master/user-example.png)
+![User Resources & Transitions](https://raw.githubusercontent.com/hopsoft/han/master/user-example.png)
 
 * The created state supports the `update` & `delete` transitions.
 * The updated state supports the `delete` transition.
@@ -198,7 +198,7 @@ This example illustrates the [**create user**](#state-machine-example) response 
 This example illustrates a **list users** call.
 It includes a list of HAN resources which looks something like this.
 
-![HAN Response](https://raw2.github.com/hopsoft/han/master/response.png)
+![HAN Response](https://raw.githubusercontent.com/hopsoft/han/master/response.png)
 
 ```javascript
 {
