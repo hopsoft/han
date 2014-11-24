@@ -3,13 +3,6 @@
 A [hypermedia](http://en.wikipedia.org/wiki/HATEOAS) specification to support complex requirements
 that extend beyond [single page applications (SPAs)](http://en.wikipedia.org/wiki/Single-page_application).
 
-> Traveling through hyperspace ain't like dusting crops, boy!
-> Without precise calculations we could fly right through a star or bounce too
-> close to a supernova, and that'd end your trip real quick, wouldn't it?
-> --Han Solo
-
-![HAN Solo](https://raw.githubusercontent.com/hopsoft/han/master/han.jpg)
-
 APIs are state machines.
 Their responses include resource(s) in a distinct state.
 These resource(s) can typically transition to other states.
